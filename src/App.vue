@@ -5,7 +5,7 @@ import TheMain from "./components/TheMain.vue";
 export default {
   components: {
     TheHeader,
-    TheMain
+    TheMain,
    
   }
 }

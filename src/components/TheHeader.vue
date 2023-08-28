@@ -1,13 +1,33 @@
 <script >
-export default{
-    name:"TheHeader"
-}
+import { store, searchMovie } from "../store"
+export default {
+    data() {
+        return {
+            store
+        };
+    },
+    methods: {
+        searchMovie
+    },
+    mounted() {
+
+    },
+
+};
 </script>
 
 <template>
- <h1>header</h1>
+    <header>
+        <div class="nav-container">
+
+          <div class="title">Boolflix</div>
+            <div class="d-flex">
+                <input class="" type="cerca" v-model="store.searchMovie" placeholder="Cerca">
+                <button  @click="searchMovie()">Cerca</button>
+            </div>
+
+        </div>
+    </header>
 </template>
 
-<style lang="scss" scoped>
-
-</style>
+<style lang="scss" scoped></style>
