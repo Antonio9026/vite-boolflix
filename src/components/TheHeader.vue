@@ -23,7 +23,7 @@ export default {
 
             <div class="title">Boolflix</div>
             <div class="d-flex">
-                <input class="" type="cerca" v-model="store.searchMovie" placeholder="Cerca">
+                <input class="" type="cerca" @keyup.enter="searchMovie()" v-model="store.searchMovie" placeholder="Cerca">
                 <button @click="searchMovie()">Cerca</button>
             </div>
 

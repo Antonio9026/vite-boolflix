@@ -1,9 +1,11 @@
 <script >
 import { store, searchMovie } from "../store";
 import LangFlag from 'vue-lang-code-flags';
+import CardSeries from "./CardSeries.vue";
 export default {
     components:{
         LangFlag,
+        CardSeries
     },
     data() {
         return {
@@ -23,12 +25,7 @@ export default {
 <template>
 <ul >
     <li v-for="series in store.seriesList">
-        <img :src= "`//image.tmdb.org/t/p/w342/${series.poster_path}`" alt="">
-
-        <p>titolo serie:{{ series.name }}</p>
-        <p>titolo originale-serie:{{ series.original_name }}</p>
-        lingua-serie:<lang-flag :iso=" series.original_language" />
-        <p>voto-serie:{{ series.vote_average }}</p>
+        <CardSeries :series="series"></CardSeries>
     </li>
 </ul>
 </template>
