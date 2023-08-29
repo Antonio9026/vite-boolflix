@@ -7,8 +7,9 @@ export default {
         };
     },
     methods: {
-        searchMovie
-    },
+        searchMovie,
+        
+    }, 
     mounted() {
 
     },
@@ -20,10 +21,10 @@ export default {
     <header>
         <div class="nav-container">
 
-          <div class="title">Boolflix</div>
+            <div class="title">Boolflix</div>
             <div class="d-flex">
                 <input class="" type="cerca" v-model="store.searchMovie" placeholder="Cerca">
-                <button  @click="searchMovie()">Cerca</button>
+                <button @click="searchMovie()">Cerca</button>
             </div>
 
         </div>
