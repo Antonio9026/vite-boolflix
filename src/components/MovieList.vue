@@ -26,20 +26,32 @@ export default {
 </script>
 
 <template>
-    <h1 class="movies">Film</h1>
+    <div class="list-container">
+        <h1 class="movies">Film</h1>
     <ul>
         <li v-for="movie in store.movieList">
             <CardMovie :movie="movie"></CardMovie>
         
         </li>
     </ul>
+    </div>
+   
 </template>
 
 <style lang="scss" scoped>
+.list-container{
+    padding-left: 20px;
+    background-color: #161616;
+}
 ul{
+    background-color: #161616;
     display: flex;
     list-style-type: none;
     gap: 10px;
     overflow: auto;
+}
+h1{
+    padding: 20px 0;
+    color: white;
 }
 </style>

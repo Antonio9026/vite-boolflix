@@ -1,5 +1,5 @@
 <script >
-import { store, searchMovie,changeAverageVote } from "../store";
+import { store, searchMovie, changeAverageVote } from "../store";
 import LangFlag from 'vue-lang-code-flags';
 
 
@@ -40,22 +40,25 @@ export default {
             <p>titolo serie:{{ series.name }}</p>
             <p>titolo originale-serie:{{ series.original_name }}</p>
             <p> lingua-serie:<lang-flag :iso="series.original_language" /></p>
-            <p>voto-serie:{{changeAverageVote(series.vote_average)  }}</p>
+            <p>voto-serie:{{ changeAverageVote(series.vote_average) }}</p>
         </div>
     </div>
 </template>
 
 <style lang="scss" scoped>
-.card-container:hover{
+.card-container:hover {
     position: relative;
-}
-// .card-info{
-//     position: absolute;
-   
-//     color: aqua;
+    padding-bottom: 40px;
 
-// }
-// p{
-//     color: aqua;
-// }
+}
+
+.card-info {
+    position: absolute;
+    bottom: 450px;
+    left: 20px;
+}
+
+img:hover {
+    opacity: 0.5;
+}
 </style>
