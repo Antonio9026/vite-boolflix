@@ -1,5 +1,5 @@
 <script >
-import { store, searchMovie } from "../store";
+import { store, searchMovie,changeAverageVote } from "../store";
 import LangFlag from 'vue-lang-code-flags';
 
 
@@ -16,11 +16,13 @@ export default {
     },
     data() {
         return {
+            store,
             store
         }
     },
     methods: {
-        searchMovie
+        searchMovie,
+        changeAverageVote
     }
 }
 
@@ -30,12 +32,30 @@ export default {
 </script>
 
 <template>
-    <img :src="`//image.tmdb.org/t/p/w342/${series.poster_path}`" alt="">
-
-    <p>titolo serie:{{ series.name }}</p>
-    <p>titolo originale-serie:{{ series.original_name }}</p>
-    <p> lingua-serie:<lang-flag :iso="series.original_language" /></p>
-    <p>voto-serie:{{ series.vote_average }}</p>
+    <div class="card-container">
+        <div class="img-container">
+            <img :src="`//image.tmdb.org/t/p/w342/${series.poster_path}`" alt="">
+        </div>
+        <div class="card-info">
+            <p>titolo serie:{{ series.name }}</p>
+            <p>titolo originale-serie:{{ series.original_name }}</p>
+            <p> lingua-serie:<lang-flag :iso="series.original_language" /></p>
+            <p>voto-serie:{{changeAverageVote(series.vote_average)  }}</p>
+        </div>
+    </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.card-container:hover{
+    position: relative;
+}
+// .card-info{
+//     position: absolute;
+   
+//     color: aqua;
+
+// }
+// p{
+//     color: aqua;
+// }
+</style>

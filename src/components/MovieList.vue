@@ -26,18 +26,20 @@ export default {
 </script>
 
 <template>
+    <h1 class="movies">Film</h1>
     <ul>
         <li v-for="movie in store.movieList">
             <CardMovie :movie="movie"></CardMovie>
-            <!-- <img :src= "`//image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="">
-
-            <p>titolo:{{ movie.title }}</p>
-            <p>titolo originale:{{ movie.original_title }}</p>
-            lingua:<lang-flag :iso="movie.original_language" />
-
-            <p>voto:{{ movie.vote_average }}</p> -->
+        
         </li>
     </ul>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+ul{
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+    overflow: auto;
+}
+</style>

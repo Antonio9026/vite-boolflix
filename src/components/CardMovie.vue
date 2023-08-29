@@ -1,5 +1,5 @@
 <script >
-import { store, searchMovie } from "../store";
+import { store, searchMovie, changeAverageVote } from "../store";
 import LangFlag from 'vue-lang-code-flags';
 
 export default {
@@ -19,7 +19,8 @@ export default {
         }
     },
     methods: {
-        searchMovie
+        searchMovie,
+        changeAverageVote
     }
 }
 
@@ -29,15 +30,15 @@ export default {
 </script>
 
 <template>
-   
-        
+<div class="card-container"></div>
+    
             <img :src= "`//image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="">
 
             <p>titolo:{{ movie.title }}</p>
             <p>titolo originale:{{ movie.original_title }}</p>
             lingua:<lang-flag :iso="movie.original_language" />
 
-            <p>voto:{{ movie.vote_average }}</p>
+            <p>voto:{{ changeAverageVote( movie.vote_average) }}</p>
    
 </template>
 

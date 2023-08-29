@@ -23,6 +23,7 @@ export default {
 </script>
 
 <template>
+    <h1 class="series">Serie TV</h1>
 <ul >
     <li v-for="series in store.seriesList">
         <CardSeries :series="series"></CardSeries>
@@ -31,5 +32,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-
+ul{
+    display: flex;
+    list-style-type: none;
+    gap: 10px;
+    overflow: auto;
+}
 </style>

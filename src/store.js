@@ -34,3 +34,8 @@ export function searchSeries() {
             console.log(response.data.results);
         });
 }
+export function changeAverageVote(voteAverage){
+    return Math.round(voteAverage/2)
+
+    
+}
