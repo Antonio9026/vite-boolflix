@@ -21,7 +21,7 @@ export default {
 </template>
 
 <style lang="scss" >
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 body{
   font-family: 'Bebas Neue', sans-serif;
 }
