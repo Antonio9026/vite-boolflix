@@ -44,11 +44,12 @@ export default {
     background-color: #161616;
 }
 ul{
+    width: 100%;
     background-color: #161616;
     display: flex;
     list-style-type: none;
     gap: 10px;
-    overflow: auto;
+    overflow:scroll;
 }
 h1{
     padding: 20px 0;

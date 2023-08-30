@@ -45,20 +45,33 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.card-container:hover {
+.card-container{
+    padding-bottom: 40px;
     position: relative;
-
+    height: 100%;
+    width: 200px;
+}
+.card-container:hover {
+   
+    .card-info{
+        opacity:1;
+    }
 }
 
 .card-info {
     position: absolute;
-    bottom: 400px;
-    left: 10px;
-
-
-
+    bottom: 200px;
+    left: 20px;
+    opacity: 0;
 }
-
+.img-container{
+    width:100%;
+    height: 100%;
+}
+img{
+    width: 100%;
+height: 100%;
+}
 img:hover {
     opacity: 0.5;
 }

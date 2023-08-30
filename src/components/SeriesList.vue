@@ -42,7 +42,7 @@ ul {
     display: flex;
     list-style-type: none;
     gap: 10px;
-    overflow: auto;
+    overflow: scroll;
   
 }
 h1{
