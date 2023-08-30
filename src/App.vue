@@ -20,6 +20,9 @@ export default {
  <SeriesList></SeriesList>
 </template>
 
-<style lang="scss" scoped>
-
+<style lang="scss" >
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+body{
+  font-family: 'Bebas Neue', sans-serif;
+}
 </style>
