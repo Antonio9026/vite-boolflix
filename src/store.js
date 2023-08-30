@@ -36,6 +36,4 @@ export function searchSeries() {
 }
 export function changeAverageVote(voteAverage){
     return Math.round(voteAverage/2)
-
-    
 }

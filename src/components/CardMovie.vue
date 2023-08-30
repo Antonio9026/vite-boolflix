@@ -1,5 +1,5 @@
 <script >
-import { store, searchMovie, changeAverageVote } from "../store";
+import { store, searchMovie, changeAverageVote,  } from "../store";
 import LangFlag from 'vue-lang-code-flags';
 
 export default {
@@ -20,7 +20,18 @@ export default {
     },
     methods: {
         searchMovie,
-        changeAverageVote
+        changeAverageVote,
+        getUrlImage(nomeImg) {
+            if (!this.movie.poster_path) {
+                return new URL(`../assets/logo/boolflix-logo.png`, import.meta.url).href
+
+            }
+
+            return "https://image.tmdb.org/t/p/w342/" + this.movie.poster_path
+
+
+        }
+       
     }
 }
 
@@ -33,7 +44,7 @@ export default {
     <div class="card-container">
 
         <div class="img-container">
-            <img :src="`//image.tmdb.org/t/p/w342/${movie.poster_path}`" alt="">
+            <img :src="getUrlImage(boolflix-logo)" alt="">
         </div>
         <div class="card-info">
             <p>titolo: {{ movie.title }}</p>

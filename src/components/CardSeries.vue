@@ -1,5 +1,5 @@
 <script >
-import { store, searchMovie, changeAverageVote } from "../store";
+import { store, searchMovie, changeAverageVote,  } from "../store";
 import LangFlag from 'vue-lang-code-flags';
 
 
@@ -9,7 +9,7 @@ export default {
             type: Object,
             required: true,
         },
-      
+
     },
     components: {
         LangFlag,
@@ -18,14 +18,27 @@ export default {
     data() {
         return {
             store,
-            store
+
+
         }
     },
     methods: {
         searchMovie,
-        changeAverageVote
+        changeAverageVote,
+       
+
+         getUrlImage(nomeImg) {
+            if (!this.series.poster_path) {
+                return new URL(`../assets/logo/boolflix-logo.png`, import.meta.url).href
+
+            }
+
+            return "https://image.tmdb.org/t/p/w342/" + this.series.poster_path
+
+
+        }
     },
-   
+
 }
 
 
@@ -36,7 +49,7 @@ export default {
 <template>
     <div class="card-container">
         <div class="img-container">
-            <img :src="`//image.tmdb.org/t/p/w342/${series.poster_path}`" alt="">
+            <img :src="getUrlImage(boolflix - logo)" alt="">
         </div>
         <div class="card-info">
             <p>titolo serie: {{ series.name }}</p>
@@ -48,16 +61,17 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.card-container{
+.card-container {
     padding-bottom: 40px;
     position: relative;
     height: 100%;
     width: 200px;
 }
+
 .card-container:hover {
-   
-    .card-info{
-        opacity:1;
+
+    .card-info {
+        opacity: 1;
     }
 }
 
@@ -67,20 +81,24 @@ export default {
     top: 20px;
     left: 10px;
     opacity: 0;
-    color:white;
+    color: white;
 }
-.img-container{
-    width:100%;
+
+.img-container {
+    width: 100%;
     height: 100%;
 }
-img{
+
+img {
     width: 100%;
-height: 100%;
+    height: 100%;
 }
+
 img:hover {
     opacity: 0.1;
 }
-.fa-star{
+
+.fa-star {
     color: gold;
 }
 </style>
